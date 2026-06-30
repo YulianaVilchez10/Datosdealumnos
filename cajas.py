@@ -21,7 +21,7 @@ if st.button("🔄 Actualizar Datos del PLC"):
 
 # 1. Descargar datos desde Supabase
 try:
-    respuesta = supabase.table("cajas").select("*").order("fecha_llegada", descending=True).execute()
+    respuesta = supabase.table("cajas").select("*").order("fecha_llegada", desc=True).execute()
     datos = respuesta.data
     
     if datos:
